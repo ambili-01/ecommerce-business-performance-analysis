@@ -1,69 +1,157 @@
-# E-commerce Business Performance Analysis
+# **E-commerce Business Performance Analysis**
+
+### End-to-End Data Analytics Portfolio Project | Python · SQL · Tableau
 
 ## Project Overview
 
-This is an independent end-to-end data analytics project focused on understanding e-commerce business performance using real-world transactional data.
+This independent data analytics project investigates the sales performance, product profitability indicators, customer purchasing behaviour, and revenue trends of a UK-based online retailer using the UCI Online Retail II dataset.
 
-The project aims to analyse sales trends, customer purchasing behaviour, product performance and revenue patterns to generate actionable business insights.
+The analysis transforms over 1 million transaction records into business insights through data cleaning, exploratory data analysis, SQL queries, customer segmentation, product performance analysis, and interactive dashboard development.
 
-## Business Problem
+The objective is to identify revenue drivers, understand customer behaviour, investigate returns, and support data-driven business decisions.
 
-An online retail business wants to understand its sales performance, identify its most valuable products and customers, and uncover opportunities to improve business performance.
+## Business Objectives
 
-As a Data Analyst, I will investigate these questions using data analysis and visualization techniques.
+- Evaluate overall sales performance and revenue trends.
+- Identify high-performing, growing, and declining products.
+- Investigate product returns and their financial impact.
+- Analyse customer purchasing behaviour and revenue concentration.
+- Segment customers using Recency, Frequency, and Monetary (RFM) analysis.
+- Evaluate customer retention and seasonal purchasing patterns.
+- Develop a Tableau dashboard to communicate business performance.
 
 ## Dataset
 
-**Online Retail II – UCI Machine Learning Repository**
+**Source:** [UCI Online Retail II](https://archive.ics.uci.edu/dataset/502/online+retail+ii)
 
-- Source: UCI Machine Learning Repository
-- Period: December 2009 – December 2011
-- Records: Approximately 1.07 million transactions
-- Data includes invoices, products, quantities, prices, customers and countries.
+**Period:** December 2009 – December 2011
 
-Dataset source: https://archive.ics.uci.edu/dataset/502/online+retail+ii
+**Original records:** 1,067,371
 
-## Project Objectives
+The dataset contains transactional information including invoice numbers, product codes, descriptions, quantities, invoice dates, unit prices, customer identifiers, and countries.
 
-1. Assess data quality and prepare transactional data.
-2. Analyse revenue and sales trends.
-3. Identify top-performing products and categories.
-4. Analyse customer purchasing behaviour.
-5. Evaluate geographical sales performance.
-6. Develop an interactive business intelligence dashboard.
-7. Present findings and actionable business recommendations.
+## Data Preparation
 
-## Tools and Technologies
+The project includes data quality investigation and a reproducible Python cleaning pipeline.
 
-- Python (Pandas, NumPy, Matplotlib)
-- SQL
-- Microsoft Excel
-- Tableau / Power BI
+Key preparation activities included:
 
-## Project Workflow
+- Identifying and removing 34,335 exact duplicate records.
+- Investigating missing customer identifiers and product descriptions.
+- Separating merchandise transactions from delivery charges and operational adjustments.
+- Identifying cancellations and returned products.
+- Excluding zero-price inventory adjustments from merchandise revenue.
+- Preparing cleaned datasets for business analysis and visualization.
 
-1. Data collection and understanding
-2. Data cleaning and validation
-3. Exploratory Data Analysis (EDA)
-4. SQL-based business analysis
-5. Data visualization and dashboard development
-6. Business insights and recommendations
+Customer records without identifiers were retained for overall sales analysis but excluded from customer-level segmentation.
 
-## Key Business Questions
+## Key Business Findings
 
-- How does revenue change over time?
-- Which products generate the highest sales?
-- Which countries contribute most to revenue?
-- Who are the most valuable customers?
-- What purchasing patterns can be identified?
-- Are there seasonal sales trends?
+### Sales Performance
 
-## Project Status
+| Metric                  |    Result |
+| ----------------------- | --------: |
+| Gross Merchandise Sales |  £19.50M |
+| Returns Value           | £724.47K |
+| Net Merchandise Sales   |  £18.77M |
+| Sales Value Return Rate |     3.72% |
+| Unit Return Rate        |     4.09% |
 
-Currently in progress.
+Net merchandise sales were calculated after deducting product cancellation and return values.
+
+November 2011 generated the highest monthly net merchandise sales, approximately £1.42 million.
+
+December 2011 is a partial month and includes unusually high return values, requiring careful interpretation when comparing monthly performance.
+
+### Product Performance
+
+The product analysis examines revenue contribution, product returns, growth trends, revenue stability, and seasonal demand.
+
+The analysis identifies products that contribute strongly to revenue, products with declining performance, and products requiring closer monitoring because of return exposure or inconsistent demand.
+
+### Customer Behaviour
+
+Customer-level analysis investigates purchasing frequency, spending patterns, repeat purchasing, and revenue concentration.
+
+RFM segmentation was used to group customers according to recency, frequency, and monetary value.
+
+Cohort analysis was also performed to evaluate customer retention across different acquisition periods.
+
+## Interactive Tableau Dashboard
+
+Dashboard Preview
+
+![E-commerce Business Performance Dashboard](images/ecommerce_dashboard.png)
+
+The Tableau dashboard provides a consolidated view of business performance, including:
+
+- Gross sales, returns value, and net sales KPIs.
+- Monthly net sales trends.
+- Top 10 products by net sales.
+- Top 10 products by return value.
+
+**[View the Tableau packaged workbook](dashboard/ecommerce_business_performance.twbx)**
+
+## Technologies Used
+
+**Python:** Pandas, NumPy, Matplotlib, data cleaning, exploratory analysis, and KPI calculations.
+
+**SQL:** Sales KPIs, monthly sales trends, product performance, and customer analysis.
+
+**Tableau:** Interactive business performance dashboard.
+
+**Jupyter Notebook:** Data exploration, statistical summaries, and visualizations.
+
+**Testing:** Python automated tests for data cleaning.
+
+**Git and GitHub:** Version control and project documentation.
+
+## Project Structure
+
+```text
+ecommerce-business-performance-analysis/
+├── dashboard/
+│   └── ecommerce_business_performance.twbx
+├── data/
+│   └── processed/
+├── images/
+├── notebooks/
+│   └── 01_data_exploration.ipynb
+├── reports/
+│   ├── customer_behaviour_analysis.md
+│   ├── data_quality_investigation.md
+│   └── product_performance_analysis.md
+├── sql/
+│   ├── 01_sales_kpis.sql
+│   ├── 02_monthly_sales.sql
+│   ├── 03_top_products.sql
+│   └── 04_top_customers.sql
+├── src/
+│   └── data_cleaning.py
+├── tests/
+│   └── test_data_cleaning.py
+├── run_pipeline.py
+└── README.md
+```
+
+## Detailed Analysis
+
+- [Data Quality Investigation](reports/data_quality_investigation.md)
+- [Product Performance Analysis](reports/product_performance_analysis.md)
+- [Customer Behaviour Analysis](reports/customer_behaviour_analysis.md)
+- [SQL Business Queries](sql/)
+- [Python Analysis Notebook](notebooks/01_data_exploration.ipynb)
+
+## Business Value
+
+This project demonstrates how transactional data can be transformed into meaningful business information.
+
+The analysis supports identifying revenue-generating products, understanding the impact of returns, evaluating customer purchasing patterns, and identifying opportunities for customer retention and product performance improvement.
 
 ## Dataset Attribution
 
-Chen, D. (2012). Online Retail II. UCI Machine Learning Repository. https://doi.org/10.24432/C5CG6D
+Chen, D. (2012). *Online Retail II*. UCI Machine Learning Repository.
+
+DOI: https://doi.org/10.24432/C5CG6D
 
 Dataset license: CC BY 4.0.
