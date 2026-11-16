@@ -96,6 +96,56 @@ The Tableau dashboard provides a consolidated view of business performance, incl
 
 **[View the Tableau packaged workbook](dashboard/ecommerce_business_performance.twbx)**
 
+
+## How to Run the Project
+
+### 1. Clone the Repository
+
+git clone https://github.com/ambili-01/ecommerce-business-performance-analysis.git
+
+cd ecommerce-business-performance-analysis
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+
+
+### 3. Download the Dataset
+
+Download the UCI Online Retail II dataset.
+
+Extract the Excel file and place it at:
+
+data/online_retail_II.xlsx
+
+
+### 4. Run the Data Cleaning Pipeline
+
+```bash
+python run_pipeline.py
+```
+
+The cleaned dataset will be saved to:
+
+`data/processed/online_retail_cleaned.parquet`
+
+### 5. Explore the Analysis
+
+Open the Jupyter notebook:
+
+```bash
+jupyter lab notebooks/01_data_exploration.ipynb
+```
+
+### 6. Run Automated Tests
+
+```bash
+python -m pytest tests/
+```
+
 ## Technologies Used
 
 **Python:** Pandas, NumPy, Matplotlib, data cleaning, exploratory analysis, and KPI calculations.
