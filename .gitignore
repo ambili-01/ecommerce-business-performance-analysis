@@ -218,3 +218,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# E-commerce project datasets
+data/*.xlsx
+data/*.xls
+data/processed/*.csv
+data/processed/*.parquet
+
+# Local temporary files
+output.png
