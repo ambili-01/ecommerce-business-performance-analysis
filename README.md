@@ -79,6 +79,10 @@ Cohort analysis was also performed to evaluate customer retention across differe
 
 ## Interactive Tableau Dashboard
 
+Live Interactive Dashboard
+
+[View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/ecommerce_business_performance/Dashboard1)
+
 Dashboard Preview
 
 ![E-commerce Business Performance Dashboard](images/ecommerce_dashboard.png)
