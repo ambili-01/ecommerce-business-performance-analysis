@@ -96,7 +96,6 @@ The Tableau dashboard provides a consolidated view of business performance, incl
 
 **[View the Tableau packaged workbook](dashboard/ecommerce_business_performance.twbx)**
 
-
 ## How to Run the Project
 
 ### 1. Clone the Repository
@@ -111,8 +110,6 @@ cd ecommerce-business-performance-analysis
 pip install -r requirements.txt
 ```
 
-
-
 ### 3. Download the Dataset
 
 Download the UCI Online Retail II dataset.
@@ -120,7 +117,6 @@ Download the UCI Online Retail II dataset.
 Extract the Excel file and place it at:
 
 data/online_retail_II.xlsx
-
 
 ### 4. Run the Data Cleaning Pipeline
 
@@ -195,6 +191,45 @@ ecommerce-business-performance-analysis/
 - [Customer Behaviour Analysis](reports/customer_behaviour_analysis.md)
 - [SQL Business Queries](sql/)
 - [Python Analysis Notebook](notebooks/01_data_exploration.ipynb)
+
+## Monte Carlo Simulation & Revenue Risk Analysis
+
+Extended the business performance analysis with
+historical bootstrap Monte Carlo simulation to
+evaluate monthly revenue uncertainty and assess
+business target achievement probabilities.
+
+### Methodology
+
+- Historical bootstrap sampling
+- 23 complete months of historical data
+- 10,000 simulated revenue scenarios
+- Statistical distribution analysis
+- Revenue shortfall probability assessment
+- Scenario and sensitivity analysis
+- Historical distribution validation
+
+### Key Results
+
+| Metric                                   |    Result |
+| ---------------------------------------- | --------: |
+| Simulated scenarios                      |    10,000 |
+| Expected monthly net revenue             | £765,371 |
+| Median monthly net revenue               | £679,338 |
+| £500K target achievement probability    |    91.69% |
+| £700K target achievement probability    |    43.10% |
+| £700K revenue shortfall risk            |    56.90% |
+| Historical vs. simulated mean difference |     0.27% |
+
+The simulation supports revenue planning and risk
+assessment based on historical performance.
+Seasonality and external market factors are not
+explicitly modeled.
+
+**Notebook:** [Revenue Risk Simulation](notebooks/revenue_risk_simulation.ipynb)
+
+**Technologies:** Python, Pandas, NumPy, SciPy,
+Matplotlib, Seaborn.
 
 ## Business Value
 
